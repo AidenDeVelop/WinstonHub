@@ -50,7 +50,7 @@ FarmSection:NewToggle("Auto Click", "ToggleInfo", function(v)
 	task.spawn(function()
 		while task.wait() do
 			if not _G.autoclick then break end
-			ReplicatedStorage.Events.Click2:FireServer()
+			ReplicatedStorage.Events.Click3:FireServer()
 		end
 	end)
 end)
