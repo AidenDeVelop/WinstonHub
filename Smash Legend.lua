@@ -36,7 +36,7 @@ end)
 
 KothSection:NewToggle("Auto KOTH", "ToggleInfo", function(v)
 	_G.autoKOTH = v
-	while _G.autoKOTH and task.wait(1) do
+	while _G.autoKOTH and task.wait(5) do
 		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
 		pl.CFrame = game:GetService("Workspace")["_KOTHMap"].Model.Hitbox.CFrame
 	end
