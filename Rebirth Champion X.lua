@@ -113,7 +113,7 @@ for i, v in pairs(game:GetService("Workspace").Scripts.TeleportTo:GetChildren())
 end
 
 MiscSection:NewButton("Hide Error", "ButtonInfo", function()
-	Player.PlayerGui.MainUI.Error:Destroy()
+	Player.PlayerGui.MainUI.Error:Destroy()--
 end)
 
 PlayerSection:NewSlider("WalkSpeed", "SliderInfo", 100, 0, function(v) -- 500 (MaxValue) | 0 (MinValue)
