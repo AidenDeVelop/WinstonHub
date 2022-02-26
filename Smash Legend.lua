@@ -12,7 +12,10 @@ local FarmTab = Window:NewTab("Farming")
 local ShopTab = Window:NewTab("Shop")
 
 -- Create Section
-local FarmSection = FarmTab:NewSection("Farming Section")
+-- Farm Tab
+local FarmSection = FarmTab:NewSection("KOTH Section")
+local KothSection = FarmTab:NewSection("KOTH Section")
+-- Shop Tab
 local ShopSection = ShopTab:NewSection("Shop Section")
 
 FarmSection:NewToggle("Auto Swing", "ToggleInfo", function(v)
@@ -28,6 +31,14 @@ FarmSection:NewToggle("Auto Sell", "ToggleInfo", function(v)
 	while _G.autoSell and task.wait() do
 	local Event = game:GetService("ReplicatedStorage").Remotes.SellRequest
 	Event:InvokeServer()
+	end
+end)
+
+KothSection:NewToggle("Auto KOTH", "ToggleInfo", function(v)
+	_G.autoKOTH = v
+	while _G.autoKOTH and task.wait(1) do
+		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+		pl.CFrame = game:GetService("Workspace")["_KOTHMap"].Model.Hitbox.CFrame
 	end
 end)
 
