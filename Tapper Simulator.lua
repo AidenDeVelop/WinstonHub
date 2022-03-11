@@ -7,13 +7,17 @@ local rs = m:NewSection("Rebirth Section")
 local m2 = w:NewTab("Misc")
 local m2s = m2:NewSection("Misc Section")
 
+local list = {}
+
 for i,v in pairs(game:GetService("Workspace").Resources.Eggs:GetChildren()) do
 	if string.match(v.Name,"Robux") then
 		v:Remove()
 	end
 end
 
-local list = {}
+for i,v in next, game.Workspace.Resources.Eggs:GetChildren() do
+	table.insert(list,v.Name)
+end
 
 ms:NewToggle("Auto Click", "ToggleInfo", function(a)
 	aa = a
